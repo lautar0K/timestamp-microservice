@@ -1,4 +1,7 @@
 const express = require("express");
 const app = express();
 
-return process.argv;
+app.get("/", function(req, res) {
+  res.end("Hola");
+});
+app.listen(3000);
