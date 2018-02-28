@@ -3,10 +3,11 @@ const app = express();
 
 app.get("/:id", function(req, res) {
   let id = req.params.id;
+  let json;
 
   if(Number.isInteger(id) == true) {
     console.log("Is UNIX");
-    let json = {
+    json = {
       "unix": id,
       "natural": new Date(id * 1000)
     };
