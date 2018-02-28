@@ -9,12 +9,15 @@ app.get("/:id", function(req, res) {
   console.log(id);
 
   if(Number(id) != NaN) {
+    console.log("//// Case 1 ////");
     json.unix = id;
     json.natural = moment.unix(id).format("MMMM D, YYYY");
   } else if(Number(id) == NaN && new Date(id) != "Invalid Date") {
+    console.log("//// Case 2 ////");
     json.unix = moment(id).format("X");
     json.natural = moment(id).format("MMMM D, YYYY");
   } else {
+    console.log("//// Case 3 ////");
     json.unix = null;
     json.natural = null;
   }
