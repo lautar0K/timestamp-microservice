@@ -6,6 +6,8 @@ app.get("/:id", function(req, res) {
   let id = Number(req.params.id);
   let json = new Object();
 
+  console.log(id);
+
   if(Number.isInteger(id) == true) {
     json.unix = id;
     json.natural = moment(id).format("MMMM d, YYYY");
