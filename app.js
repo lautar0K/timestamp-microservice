@@ -2,6 +2,10 @@ const express = require("express");
 const app = express();
 
 app.get("/*", function(req, res) {
+  console.log(req);
+  console.log(req.query);
+
+
   if(Number.isInteger(req) == true) {
     let json = {
       "unix": req,
