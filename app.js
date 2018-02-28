@@ -13,7 +13,8 @@ app.get("/:id", function(req, res) {
     json.unix = id;
     json.natural = moment.unix(id).format("MMMM D, YYYY");
 
-  } else if(Number.isInteger(Number(id)) == false) {
+  } else if(Number.isInteger(Number(id)) == false)
+  && new Date(id) != "Invalid Date") {
     console.log("//// Case 2 ////");
     json.unix = moment(id).format("X");
     json.natural = moment(id).format("MMMM D, YYYY");
