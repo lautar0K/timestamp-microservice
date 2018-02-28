@@ -5,6 +5,8 @@ app.get("/:id", function(req, res) {
   let id = req.params.id;
   let json;
 
+  console.log("ID is", typeof id);
+
   if(Number.isInteger(id) == true) {
     console.log("Is UNIX");
     json = {
