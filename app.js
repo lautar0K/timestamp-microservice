@@ -4,7 +4,7 @@ const moment = require("moment");
 
 app.get("/:id", function(req, res) {
   let id = Number(req.params.id);
-  let json;
+  let json = new Object();
 
   if(Number.isInteger(id) == true) {
     json.unix = id;
