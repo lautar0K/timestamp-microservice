@@ -13,11 +13,9 @@ app.get("/:id", function(req, res) {
     json.unix = id;
     json.natural = moment.unix(id).format("MMMM D, YYYY");
   } else if(Number(id) == NaN) {
-     if(new Date(id) != "Invalid Date") {
-       console.log("//// Case 2 ////");
-       json.unix = moment(id).format("X");
-       json.natural = moment(id).format("MMMM D, YYYY");
-     }
+    console.log("//// Case 2 ////");
+    json.unix = moment(id).format("X");
+    json.natural = moment(id).format("MMMM D, YYYY");
   } else {
     console.log("//// Case 3 ////");
     json.unix = null;
