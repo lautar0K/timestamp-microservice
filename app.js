@@ -3,12 +3,12 @@ const app = express();
 const moment = require("moment");
 
 app.get("/:id", function(req, res) {
-  let id = Number(req.params.id);
+  let id = req.params.id;
   let json = new Object();
 
   console.log(id);
 
-  if(Number.isInteger(id) == true) {
+  if(typeof Number(id) == "Number") {
     json.unix = id;
     json.natural = moment(id).format("MMMM d, YYYY");
   } else if(new Date(id) != "Invalid Date") {
