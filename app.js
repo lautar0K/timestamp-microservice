@@ -10,10 +10,10 @@ app.get("/:id", function(req, res) {
 
   if(Number(id) != NaN) {
     json.unix = id;
-    json.natural = moment(new Date(id)).format("MMMM d, YYYY");
+    json.natural = moment(new Date(id * 1000 + 10800000)).format("MMMM d, YYYY");
   } else if(Number(id) == NaN && new Date(id) != "Invalid Date") {
-    json.unix = new Date(id).getTime() / 1000;
-    json.natural = moment(id).format("MMMM d, YYYY");
+    json.unix = new Date(id).getTime() / 1000 + 10800000;
+    json.natural = moment(new Date(id * 1000 + 10800000)).format("MMMM d, YYYY");
   } else {
     json.unix = null;
     json.natural = null;
