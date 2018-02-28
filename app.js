@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const moment = require("moment");
 
 app.get("/:", function(req, res) {
   let id = Number(req.params.id);
@@ -8,7 +9,7 @@ app.get("/:", function(req, res) {
   if(Number.isInteger(id) == true) {
     json = {
       "unix": id,
-      "natural": new Date(id * 1000)
+      "natural": moment(id).format("M d, YYYY")
     };
   }
   res.json(json);

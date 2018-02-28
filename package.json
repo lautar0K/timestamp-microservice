@@ -2,7 +2,8 @@
   "name": "timestamp-microservice",
   "version": "1.0.0",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "moment": "^2.20.1"
   },
   "engines": {
     "node": "8.9.4",
@@ -14,8 +15,5 @@
     "start": "node app.js"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.16.2"
-  }
+  "license": "ISC"
 }
