@@ -11,7 +11,7 @@ app.get("/:id", function(req, res) {
   if(typeof Number(id) == "Number") {
     json.unix = id;
     json.natural = moment(id).format("MMMM d, YYYY");
-  } else if(new Date(id) != "Invalid Date") {
+  } else if(Number(id) == NaN && new Date(id) != "Invalid Date") {
     json.unix = new Date(id).getTime() / 1000;
     json.natural = moment(id).format("MMMM d, YYYY");
   } else {
