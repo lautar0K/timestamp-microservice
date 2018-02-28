@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-app.get("/", function(req, res) {
+app.get("/*", function(req, res) {
   if(Number.isInteger(req) == true) {
     let json = {
       "unix": req,
