@@ -1,9 +1,8 @@
 const express = require("express");
 const app = express();
 
-app.get("/*", function(req, res) {
-  console.log(req.query);
-
+app.get("/:", function(req, res) {
+  console.log(req.params);
 
   if(Number.isInteger(req) == true) {
     let json = {
