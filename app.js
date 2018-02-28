@@ -8,7 +8,7 @@ app.get("/:id", function(req, res) {
 
   console.log(id);
 
-  if(Number(id) != NaN) {
+  if(typeof Number(id) == "Number") {
     console.log("//// Case 1 ////");
     json.unix = id;
     json.natural = moment.unix(id).format("MMMM D, YYYY");
