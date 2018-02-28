@@ -7,10 +7,8 @@ app.get("/:id", function(req, res) {
   let json;
 
   if(Number.isInteger(id) == true) {
-    json = {
-      "unix": id,
-      "natural": moment(id).format("MMMM d, YYYY")
-    };
+    json.unix = id;
+    json.natural = moment(id).format("MMMM d, YYYY");
   }
   res.json(json);
 });
