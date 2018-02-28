@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const moment = require("moment");
 
-app.get("/:", function(req, res) {
+app.get("/id:", function(req, res) {
   let id = Number(req.params.id);
   let json;
 
