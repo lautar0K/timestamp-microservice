@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 
 app.get("/:id", function(req, res) {
-  let id = req.params.id;
+  let id = Number(req.params.id);
   let json;
 
   console.log("ID is", typeof id);
